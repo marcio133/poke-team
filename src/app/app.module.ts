@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PokeSearchComponent } from './poke-search/poke-search.component';
+import { PokeTeamComponent } from './poke-team/poke-team.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PokeSearchComponent,
+    PokeTeamComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
