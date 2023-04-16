@@ -1,1 +1,49 @@
-<p>poke-search works!</p>
+<div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <div class="row">
+            <div class="col">
+                <input 
+                    type="text"
+                    class="form-control"
+                    id="pokemon-search"
+                    placeholder="Search Pokemon"
+                    aria-describedby="pokemonSearch"
+                    formControlName="search"
+                >
+                <div id="pokemonSearchHelp" class="form-text">You can search pokemons by exact name or pokedex ID.</div>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="pokemon" class="container">
+    <div class="row">
+        <div class="col-4">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="PokeHome front sprite">
+        </div>
+
+        <div class="col">
+            <div class="pokemon__name">
+                {{ pokemon.name }} - #{{ pokemon.id }}
+            </div>
+            <div class="pokemon__types">
+                <div *ngFor="let type of pokemon.types" [style.background-color]="colors[type.type.name]">
+                    {{ type.type.name }}
+                </div>
+            </div>
+            <div class="pokemon__abilities">
+                <div *ngFor="let ability of pokemon.abilities">
+                    {{ ability.ability.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-secondary">Add to Team</button>
+        </div>
+    </div>
+</div>
