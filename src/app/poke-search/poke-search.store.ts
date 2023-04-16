@@ -5,7 +5,6 @@ import { Pokemon } from '../models/pokemon.model';
 import { PokeApiService } from './poke-api.service';
 
 export interface PokeSearchState {
-    query: string;
     resultPokemon: Pokemon | null;
 }
 
@@ -14,7 +13,7 @@ export class PokeSearchStore extends ComponentStore<PokeSearchState> {
     readonly resultPokemon$ = this.select(state => state.resultPokemon);
 
     constructor(private pokeApiService: PokeApiService) {
-        super({ query: '', resultPokemon: null });
+        super({ resultPokemon: null });
     }
 
     readonly getPokemon = this.effect((query$: Observable<string>) => {
