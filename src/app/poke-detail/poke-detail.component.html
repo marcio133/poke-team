@@ -1,1 +1,30 @@
-<p>poke-detail works!</p>
+<div class="container">
+    <div class="pokemon">
+        <div class="pokemon__img">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="PokeHome front sprite">
+        </div>
+
+        <div class="pokemon__info">
+            <div class="pokemon__info__name">
+                {{ pokemon.name }} - <span>Nº{{ pokemon.id }}</span> 
+                <button type="button" class="btn btn-secondary" (click)="addToTeam()">Add to Team</button>
+            </div>
+            <div class="pokemon__info__types">
+                <span *ngFor="let type of pokemon.types" [style.background-color]="colors[type.type.name]">
+                    {{ type.type.name }}
+                </span>
+            </div>
+            <div class="pokemon__info__abilities" [style.background-color]="colors[pokemon.types[0].type.name]">
+                <div class="pokemon__info__abilities__title">
+                    Abilities
+                </div>
+                <div class="pokemon__info__abilities__list">
+                    <span *ngFor="let ability of pokemon.abilities">
+                        {{ ability.ability.name }}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
