@@ -6,17 +6,17 @@ import { addPokemonToTeam } from '../store/actions';
 import { COLORS } from '../models/pokemon.consts';
 
 @Component({
-  selector: 'app-poke-detail',
-  templateUrl: './poke-detail.component.html',
-  styleUrls: ['./poke-detail.component.scss']
+    selector: 'app-poke-detail',
+    templateUrl: './poke-detail.component.html',
+    styleUrls: ['./poke-detail.component.scss'],
 })
 export class PokeDetailComponent {
     @Input() public pokemon!: Pokemon;
     public colors = COLORS;
 
-	constructor(private store: Store<AppState>) {}
+    constructor(private store: Store<AppState>) {}
 
-	addToTeam() {
-		this.store.dispatch(addPokemonToTeam({ pokemon: this.pokemon }));
-	}
+    addToTeam() {
+        this.store.dispatch(addPokemonToTeam({ pokemon: this.pokemon }));
+    }
 }

@@ -10,5 +10,5 @@ export const selectFeature = (state: AppState) => state.pokeTeam;
 export const selectPokeTeam = createSelector(
     selectFeature,
     (state: PokeTeamState) => state.team
-  );
+);
 
