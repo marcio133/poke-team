@@ -1,1 +1,18 @@
-<p>poke-team works!</p>
+    <div class="team">
+        <div *ngFor="let pokemon of team; let i = index;" class="pokemon" [style.border-color]="colors[pokemon.types[0].type.name]">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="PokeHome front sprite">
+            
+            <div class="pokemon__name">
+                {{ pokemon.name }}
+            </div>
+
+            <div class="pokemon__types">
+                <span *ngFor="let type of pokemon.types" class="pokemon__types__item" [style.background-color]="colors[type.type.name]">
+                    {{ type.type.name }}
+                </span>
+            </div>
+
+            <button type="button" class="btn btn-secondary btn-sm pokemon__remove" (click)="remove(i)">Remove</button>
+
+        </div>
+    </div>

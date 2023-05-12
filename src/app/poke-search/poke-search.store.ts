@@ -12,7 +12,9 @@ export interface PokeSearchState {
 export class PokeSearchStore extends ComponentStore<PokeSearchState> {
     readonly resultPokemon$ = this.select(state => state.resultPokemon);
 
-    constructor(private pokeApiService: PokeApiService) {
+    constructor(
+        private pokeApiService: PokeApiService,
+    ) {
         super({ resultPokemon: null });
     }
 

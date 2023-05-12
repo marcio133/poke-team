@@ -1,0 +1,50 @@
+.team {
+    display: flex;
+    gap: 15px;  
+    min-height: 35vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5vh 10vw;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid red;
+    padding: 15px;
+    border-radius: 0.625em;
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+    }
+
+    &__name {
+        font-size: 0.875em;
+        font-weight: 700;
+    }
+
+    &__types {
+        display: flex;
+        justify-content: center;
+        gap: 3px;
+        margin-bottom: 10px;
+
+        &__item {
+            text-transform: uppercase;
+            font-size: 0.7em;
+            border-radius: 15px;
+            color: white;
+            width: 80px;
+        }
+    }
+
+    &__remove {
+        width: fit-content;
+    }
+}
