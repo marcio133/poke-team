@@ -9,6 +9,7 @@ import { PokeSearchComponent } from './poke-search/poke-search.component';
 import { PokeTeamComponent } from './poke-team/poke-team.component';
 import { PokeSearchStore } from './poke-search/poke-search.store';
 import { PokeDetailComponent } from './poke-detail/poke-detail.component';
+import { pokeTeamReducer } from './store/recuders';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { PokeDetailComponent } from './poke-detail/poke-detail.component';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ pokeTeam: pokeTeamReducer }),
   ],
   providers: [PokeSearchStore],
   bootstrap: [AppComponent]
