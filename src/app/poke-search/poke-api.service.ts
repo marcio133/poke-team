@@ -10,7 +10,6 @@ export class PokeApiService {
     constructor(public http: HttpClient) { }
 
     public getPokemon(query: string): Observable<Pokemon> {
-        console.log(query)
         return this.http.get<Pokemon>(
             `https://pokeapi.co/api/v2/pokemon/${query}`
         );
