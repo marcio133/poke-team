@@ -6,22 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Project Explanation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In this example project explore the differences between using the ngrx store and component/store in an Angular application.
 
-## Build
+The ngrx store is a powerful tool for managing state in Angular applications, providing a centralized location for storing and retrieving data that can be accessed from any component. The ngrx store uses the Redux pattern, which involves creating a single store that holds the entire state of the application, and using actions and reducers to update that state.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+However, in some cases, using a centralized store for all state management may be overkill for smaller applications and in bigger applications it may generate a lot of noise, since not everything should or need to be in the centralized state. This is where component/store comes in. 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Here I try to show that those two resouces can be used at the same time, using a centralized store for the most important data of the application that needs to be visible to every component and component/store to the things that don't need to be acessed by the rest of the application.
